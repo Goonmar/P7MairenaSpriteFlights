@@ -1,32 +1,47 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    //Score variables
     private float elapsedTime = 0f;
 
     private float score = 0f;
 
     public float scoreMultiplier = 10f;
 
-    public GameObject boosterFlame;
+    private Label scoreText;
 
+    //Speed variables
     public float maxSpeed = 5f;
 
     public float thrustForce = 1f;
 
+    //Restart variables
+    public GameObject explosionEffect;
+
+    private Button restartButton;
+
+    //Randpm Variables
     Rigidbody2D rb;
 
     public UIDocument uiDocument;
 
-    private Label scoreText;
+    //STUPID BOOSTER FLAME
+    public GameObject boosterFlame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         scoreText = uiDocument.rootVisualElement.Q<Label>("ScoreLabel");
+
+        //Restart Button
+        restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
+        restartButton.style.display = DisplayStyle.None;
+        restartButton.clicked += ReloadScene;
     }
 
     // Update is called once per frame
@@ -50,7 +65,7 @@ public class PlayerController : MonoBehaviour
             //Max velocity
             if (rb.linearVelocity.magnitude > maxSpeed)
             {
-            rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
+                rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
             }
 
             //Booster flame
@@ -67,6 +82,12 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+        restartButton.style.display = DisplayStyle.Flex;
     }
 
+    void ReloadScene()
+        {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 }

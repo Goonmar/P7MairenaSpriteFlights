@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28615199}
+  - component: {fileID: 28615200}
   m_Layer: 0
   m_Name: Obstacles
   m_TagString: Untagged
@@ -158,6 +159,22 @@ Transform:
   - {fileID: 512124178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28615200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28615198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe270529e5f8e7647944066ac3b40232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  minSize: 0.5
+  maxSize: 1.5
+  minSpeed: 50
+  maxSpeed: 300
 --- !u!1 &54673790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,10 +1898,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   scoreMultiplier: 10
-  boosterFlame: {fileID: 1379703825}
   maxSpeed: 5
   thrustForce: 2
+  explosionEffect: {fileID: 704489833622558370, guid: 6e867d2c169ea0449a70ae81753077a3, type: 3}
   uiDocument: {fileID: 2080890848}
+  boosterFlame: {fileID: 1379703825}
 --- !u!1001 &4444790421433931630
 PrefabInstance:
   m_ObjectHideFlags: 0
