@@ -9,6 +9,8 @@ public class Obstacle : MonoBehaviour
     public float maxSpeed = 150f;
 
     public GameObject bounceEffect;
+    public GameObject bounceEffectPrefab;
+
 
     Rigidbody2D rb;
   
@@ -35,7 +37,7 @@ public class Obstacle : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 contactPoint = collision.GetContact(0).point;
-        GameObject bounceEffect = Instantiate(bounceEffectPrefab, contactPoint, Quaternion.identity);
+       GameObject bounceEffect = Instantiate(bounceEffectPrefab, contactPoint, Quaternion.identity);
 
         //Destroy effect
         Destroy(bounceEffect, 1f);
