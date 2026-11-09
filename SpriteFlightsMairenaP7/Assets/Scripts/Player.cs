@@ -24,10 +24,12 @@ public class PlayerController : MonoBehaviour
 
     private Button restartButton;
 
-    //Randpm Variables
+    //Random Variables
     Rigidbody2D rb;
 
     public UIDocument uiDocument;
+
+    public GameObject borderParent;
 
     //STUPID BOOSTER FLAME
     public GameObject boosterFlame;
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        borderParent.SetActive(false);
         Destroy(gameObject);
         Instantiate(explosionEffect, transform.position, transform.rotation);
         restartButton.style.display = DisplayStyle.Flex;

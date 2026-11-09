@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.6886792, g: 0.21672924, b: 0.12019401, a: 1}
+  m_Color: {r: 0.26666668, g: 0.07058824, b: 0.050980397, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -110,7 +110,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a3a7e91ce47d05e4088478be9f729dff, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
