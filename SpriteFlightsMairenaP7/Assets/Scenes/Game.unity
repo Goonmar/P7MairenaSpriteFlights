@@ -1932,6 +1932,7 @@ MonoBehaviour:
   thrustForce: 2
   explosionEffect: {fileID: 704489833622558370, guid: 6e867d2c169ea0449a70ae81753077a3, type: 3}
   uiDocument: {fileID: 2080890848}
+  borderParent: {fileID: 1281193353}
   boosterFlame: {fileID: 1379703825}
 --- !u!1001 &4444790421433931630
 PrefabInstance:
